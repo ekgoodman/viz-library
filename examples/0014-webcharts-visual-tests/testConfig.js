@@ -153,5 +153,84 @@ var testConfig = [
       ]
     },
     dataPath: '../../data/queries/queries.csv'
+  },
+
+//-------------------------------LINE----------------------------------------
+
+    {
+    label: 'Testing Axis Types - linear vs. linear',
+    notes: 'This chart compares the element number to its weight.',
+    settings: {
+      max_width:1000,
+      y: {
+        column: 'Weight',
+        type: 'linear',
+      },
+      x: {
+        type:'linear',
+        label:'Element',
+      },
+      marks: [
+        {
+          type: 'line',
+          per: ['Weight'],
+        }
+      ]
+    },
+    dataPath: '../../data/element.csv'
+  },
+
+//-------------------------------Bar----------------------------------------
+
+
+    {
+    label: 'Testing Axis Types - linear vs. linear',
+    notes: 'This chart compares the element number to its weight.',
+    settings: {
+      max_width:1000,
+      y: {
+        column: 'Weight',
+        type: 'linear',
+      },
+      x: {
+        type:'linear',
+        label:'Element',
+      },
+      marks: [
+        {
+          type: 'bar',
+          per: ['Weight'],
+        }
+      ]
+    },
+    dataPath: '../../data/element.csv'
+  },
+
+//-------------------------------text----------------------------------------
+
+
+    {
+    label: 'Testing Axis Types - linear vs. linear',
+    notes: 'This chart compares the element number to its weight.',
+    settings: {
+      max_width:1000,
+      y: {
+        column: 'Weight',
+        type: 'linear',
+      },
+      x: {
+        type:'linear',
+        label:'Element',
+      },
+      marks: [
+        {
+          type: 'text',
+          per: ['Weight'],
+	  text: '$y',
+        }
+      ]
+    },
+    dataPath: '../../data/element.csv'
   }
+
 ];
