@@ -90,9 +90,6 @@ console.log(dataPaths)
 //load the data and render the chart
 dataPaths.forEach(function(file) {
   d3.csv(file.path, function(error, data) {
-  if (error){
-    console.log(error);}
-  else{
     file.raw = data;
 
     chartDivs
@@ -101,8 +98,7 @@ dataPaths.forEach(function(file) {
         chart.raw = file.raw
       }
       return chart.dataPath == file.path
-  }
-    )
+    })
     .each(renderTest)
-  }});
+  });
 });

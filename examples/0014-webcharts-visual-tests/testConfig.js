@@ -53,6 +53,7 @@ var testConfig = [
     },
     dataPath: '../../data/elements.csv'
   },
+  
   {
     label: 'Testing Axis Types - ordinal vs. ordinal',
     notes:'Opacity set to identify overlapping points. As shown, ordinal axis treat missing values as just another level to be plotted. (e.g. `group=""` or  `group=" "`)',
@@ -83,6 +84,7 @@ var testConfig = [
     notes: 'log axes are buggy as of 1.7.1.',
     settings: {
       max_width:500,
+	  gridlines:'xy',
       x: {
         column: 'Melt',
         type: 'log',
@@ -154,83 +156,83 @@ var testConfig = [
     },
     dataPath: '../../data/queries/queries.csv'
   },
-
-//-------------------------------LINE----------------------------------------
-
-    {
-    label: 'Testing Axis Types - linear vs. linear',
-    notes: 'This chart compares the element number to its weight.',
+  
+      {
+    label: 'Testing Mark Type- Line',
+    notes:'',
     settings: {
-      max_width:1000,
-      y: {
-        column: 'Weight',
-        type: 'linear',
-      },
+      max_width:500,
       x: {
-        type:'linear',
-        label:'Element',
+        column: 'Melt',
+        type: 'linear',
+        label: 'Melting Point (K)'
+      },
+      y: {
+        column: 'Boil',
+        type: 'linear',
+        label: 'Boiling Point (K)'
       },
       marks: [
         {
           type: 'line',
-          per: ['Weight'],
+          per: []
         }
       ]
     },
-    dataPath: '../../data/element.csv'
+    dataPath: '../../data/elements.csv'
   },
-
-//-------------------------------Bar----------------------------------------
-
-
-    {
-    label: 'Testing Axis Types - linear vs. linear',
-    notes: 'This chart compares the element number to its weight.',
+  
+  {
+    label: 'Testing Mark Type- Bar',
+    notes:'',
+	"gridlines":"x",
     settings: {
-      max_width:1000,
+      max_width:500,
+      x: {
+        column: 'Element',
+        type: 'ordinal',
+        label: 'Element (#)'
+      },
       y: {
         column: 'Weight',
         type: 'linear',
-      },
-      x: {
-        type:'linear',
-        label:'Element',
+        label: 'Weight (units)'
       },
       marks: [
         {
           type: 'bar',
-          per: ['Weight'],
+          per: ['Element']
         }
       ]
     },
-    dataPath: '../../data/element.csv'
+    dataPath: '../../data/elements_first_five.csv'
   },
-
-//-------------------------------text----------------------------------------
-
-
+  
     {
-    label: 'Testing Axis Types - linear vs. linear',
-    notes: 'This chart compares the element number to its weight.',
+    label: 'Testing Mark Type- Text',
+    notes:'',
     settings: {
-      max_width:1000,
+      max_width:500,
+      x: {
+        column: 'Element',
+        type: 'ordinal',
+        label: 'Element (#)'
+      },
       y: {
         column: 'Weight',
         type: 'linear',
-      },
-      x: {
-        type:'linear',
-        label:'Element',
+        label: 'Weight (units)'
       },
       marks: [
         {
           type: 'text',
-          per: ['Weight'],
-	  text: '$y',
+		  text: '$y',
+          per: ['Element']
         }
       ]
     },
-    dataPath: '../../data/element.csv'
+    dataPath: '../../data/elements_first_five.csv'
   }
+
 
 ];
